@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Studio de Adesivos — Envelopamento &amp; Adesivos Personalizados</title>
+<meta name="description" content="Crie adesivos e simule envelopamento de veículos e móveis. Designer virtual com IA, editor completo e orçamento na hora.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="splash"><div class="splash-in"><span>🎨</span><strong>Studio de Adesivos</strong><small>carregando fontes e ferramentas…</small></div></div>
+
+<header id="topbar">
+  <div class="brand" data-view="home">
+    <span class="logo">🎨</span>
+    <span class="brand-txt"><strong>STUDIO</strong> de Adesivos<small>envelopamento &amp; recorte</small></span>
+  </div>
+  <nav id="mainnav">
+    <button class="nav-link" data-view="home">Início</button>
+    <button class="nav-link" data-view="designer">🪄 Designer IA</button>
+    <button class="nav-link" data-view="editor">✏️ Editor</button>
+    <button class="nav-link" data-view="projects">📁 Projetos</button>
+  </nav>
+  <div class="top-actions">
+    <button id="btn-import" class="btn ghost sm" title="Importar projeto .json">⬆ Importar</button>
+    <input id="import-input" type="file" accept="application/json,.json" style="display:none">
+    <button id="btn-nav-settings" class="icon-btn" title="Configurações">⚙</button>
+  </div>
+</header>
+
+<main id="app">
+
+  <!-- ================= HOME ================= -->
+  <section class="view active" id="view-home">
+    <svg class="flags" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true">
+      <line x1="0" y1="4" x2="1200" y2="4" stroke="#a89fc7" stroke-width="2"/>
+      <g>
+        <path d="M10 4 L60 4 L35 30 Z" fill="#b6ff3c"/><path d="M110 4 L160 4 L135 30 Z" fill="#00c853"/>
+        <path d="M210 4 L260 4 L235 30 Z" fill="#00b8a9"/><path d="M310 4 L360 4 L335 30 Z" fill="#e8ffe8"/>
+        <path d="M410 4 L460 4 L435 30 Z" fill="#00e676"/><path d="M510 4 L560 4 L535 30 Z" fill="#0a3d1f"/>
+        <path d="M610 4 L660 4 L635 30 Z" fill="#b6ff3c"/><path d="M710 4 L760 4 L735 30 Z" fill="#00c853"/>
+        <path d="M810 4 L860 4 L835 30 Z" fill="#00b8a9"/><path d="M910 4 L960 4 L935 30 Z" fill="#e8ffe8"/>
+        <path d="M1010 4 L1060 4 L1035 30 Z" fill="#00e676"/><path d="M1110 4 L1160 4 L1135 30 Z" fill="#0a3d1f"/>
+      </g>
+    </svg>
+    <div class="hero">
+      <div class="hero-txt">
+        <span class="pill">☀️ Designer virtual de envelopamento</span>
+        <h1>Envie uma foto, descreva a ideia.<br><em>A IA mostra o resultado.</em></h1>
+        <p>Simule envelopamento de carros, motos, caminhões, capacetes e móveis antes de gastar um real de vinil. Depois personalize no editor e peça o orçamento na hora.</p>
+        <div class="hero-cta">
+          <button id="cta-designer" class="btn primary big">🪄 Começar com a IA</button>
+          <button id="cta-editor" class="btn big">✏️ Criar adesivo do zero</button>
+        </div>
+        <div class="hero-flow">
+          <span>ENVIAR FOTO</span><i>→</i><span>DESCREVER</span><i>→</i><span>IA GERA OPÇÕES</span><i>→</i><span>PERSONALIZAR</span><i>→</i><span>ORÇAR</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 400 300">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#b6ff3c"/><stop offset="1" stop-color="#00895a"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#050705"/><stop offset="1" stop-color="#20281f"/>
+            </linearGradient>
+            <radialGradient id="g3" cx=".5" cy=".18" r=".9">
+              <stop offset="0" stop-color="rgba(0,230,118,.25)"/><stop offset="1" stop-color="rgba(0,230,118,0)"/>
+            </radialGradient>
+          </defs>
+          <rect x="8" y="8" width="384" height="284" rx="18" fill="#0a0f0b"/>
+          <rect x="8" y="8" width="384" height="284" rx="18" fill="url(#g3)"/>
+          <path d="M40 210 L120 120 L250 100 L340 150 L360 210 Z" fill="url(#g2)" stroke="rgba(0,230,118,.35)" stroke-width="2"/>
+          <path d="M120 120 L250 100 L270 140 L140 160 Z" fill="url(#g1)" opacity=".95"/>
+          <path d="M52 196 L348 196" stroke="#00e676" stroke-width="2" opacity=".5"/>
+          <circle cx="115" cy="215" r="34" fill="#050705" stroke="#00e676" stroke-width="5"/>
+          <circle cx="300" cy="215" r="34" fill="#050705" stroke="#00e676" stroke-width="5"/>
+          <circle cx="115" cy="215" r="12" fill="none" stroke="#b6ff3c" stroke-width="3" opacity=".8"/>
+          <circle cx="300" cy="215" r="12" fill="none" stroke="#b6ff3c" stroke-width="3" opacity=".8"/>
+          <path d="M60 254 L350 254" stroke="#00e676" stroke-width="5" stroke-dasharray="26 14"/>
+          <text x="200" y="58" text-anchor="middle" font-family="Anton, sans-serif" font-size="40" fill="#eaffe9">PRETO &amp; VERDE</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="features">
+      <article><span>📷</span><h3>Análise da foto</h3><p>Detecta formato, painéis, curvas e reflexos — e preserva rodas, faróis e geometria.</p></article>
+      <article><span>🎨</span><h3>4 propostas por rodada</h3><p>Cores, acabamentos e níveis de personalização diferentes na mesma foto.</p></article>
+      <article><span>✂️</span><h3>Editor completo</h3><p>Textos com curvatura, formas, ícones, emojis, desenho livre, recorte e remoção de fundo.</p></article>
+      <article><span>💰</span><h3>Orçamento na hora</h3><p>Área, acabamento e aplicação calculados e enviados direto para o seu WhatsApp.</p></article>
+    </div>
+
+    <div class="home-block">
+      <div class="hb-head"><h2>Seus projetos</h2><button id="cta-blank" class="btn sm">+ Novo adesivo</button></div>
+      <div id="home-projects" class="proj-grid"></div>
+    </div>
+  </section>
+
+  <!-- ================= DESIGNER IA ================= -->
+  <section class="view" id="view-designer">
+    <ol id="ai-steps">
+      <li class="step">1. Enviar foto</li>
+      <li class="step">2. Sua ideia</li>
+      <li class="step">3. Opções da IA</li>
+      <li class="step">4. Orçamento</li>
+    </ol>
+    <div id="ai-body" class="ai-body"></div>
+  </section>
+
+  <!-- ================= EDITOR ================= -->
+  <section class="view" id="view-editor">
+    <div class="ed-top">
+      <input id="ed-name" class="input name-input" value="Novo adesivo" aria-label="Nome do projeto">
+      <div class="ed-top-actions">
+        <button id="btn-undo" class="icon-btn" title="Desfazer (Ctrl+Z)">↶</button>
+        <button id="btn-redo" class="icon-btn" title="Refazer (Ctrl+Shift+Z)">↷</button>
+        <span class="sep"></span>
+        <button id="btn-zoom-out" class="icon-btn" title="Diminuir zoom">−</button>
+        <span id="ed-zoom-label" class="zoom-label">60%</span>
+        <button id="btn-zoom-in" class="icon-btn" title="Aumentar zoom">+</button>
+        <button id="btn-zoom-fit" class="icon-btn" title="Enquadrar">⛶</button>
+        <span class="sep"></span>
+        <button id="btn-panel" class="icon-btn" title="Painel de propriedades" style="display:none">☰</button>
+        <button id="btn-clear" class="icon-btn" title="Limpar prancheta">🗑</button>
+        <button id="btn-cut" class="btn sm" title="Mostrar linha de corte">✂ Corte</button>
+        <button id="btn-save" class="btn sm">💾 Salvar</button>
+        <button id="btn-export" class="btn sm primary">⬇ Exportar</button>
+      </div>
+    </div>
+
+    <div class="ed-main">
+      <aside class="ed-tools" id="ed-tools">
+        <button class="tool active" data-tool="select" title="Selecionar (V)">➤</button>
+        <button class="tool" data-tool="hand" title="Mover a tela (H)">✋</button>
+        <button class="tool" data-tool="text" title="Texto (T)">T</button>
+        <button class="tool" data-tool="shape" title="Forma (S)">◆</button>
+        <button class="tool" data-tool="draw" title="Desenhar (D)">✎</button>
+        <div id="tool-opts" class="tool-opts"></div>
+      </aside>
+
+      <div class="ed-stage" id="ed-stage">
+        <canvas id="ed-canvas"></canvas>
+      </div>
+
+      <aside class="ed-side">
+        <div class="side-tabs">
+          <button class="side-tab active" data-tab="props">Propriedades</button>
+          <button class="side-tab" data-tab="layers">Camadas</button>
+        </div>
+        <div class="side-panel" id="panel-props"><div id="props-body"></div></div>
+        <div class="side-panel hidden" id="panel-layers"><div id="layers-list" class="layers-list"></div></div>
+      </aside>
+    </div>
+
+    <div class="ed-dock" id="ed-dock">
+      <button class="dock-btn" data-act="text"><span>T</span>Texto</button>
+      <button class="dock-btn" data-act="font"><span>Aa</span>Fontes</button>
+      <button class="dock-btn" data-act="shape"><span>◆</span>Formas</button>
+      <button class="dock-btn" data-act="image"><span>🖼</span>Imagem</button>
+      <button class="dock-btn" data-act="emoji"><span>😀</span>Emojis</button>
+      <button class="dock-btn" data-act="icon"><span>★</span>Ícones</button>
+      <button class="dock-btn" data-act="template"><span>▦</span>Modelos</button>
+      <button class="dock-btn" data-act="draw"><span>✎</span>Desenhar</button>
+      <button class="dock-btn" data-act="cutout"><span>✂</span>Recortar</button>
+      <button class="dock-btn" data-act="sticker"><span>◉</span>Efeitos</button>
+      <input id="file-input" type="file" accept="image/*" multiple style="display:none">
+    </div>
+  </section>
+
+  <!-- ================= PROJETOS ================= -->
+  <section class="view" id="view-projects">
+    <div class="page-head">
+      <h2>Projetos salvos</h2>
+      <div class="row-end">
+        <button id="cta-open-designer" class="btn sm">🪄 Designer IA</button>
+        <button id="btn-new-proj" class="btn sm primary">+ Novo adesivo</button>
+      </div>
+    </div>
+    <div id="projects-list"></div>
+  </section>
+
+</main>
+
+<footer id="footer">
+  <span>Studio de Adesivos · envelopamento de veículos e móveis</span>
+  <span class="dot">•</span>
+  <span>Seus projetos ficam salvos neste navegador</span>
+</footer>
+
+<div id="toasts"></div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
